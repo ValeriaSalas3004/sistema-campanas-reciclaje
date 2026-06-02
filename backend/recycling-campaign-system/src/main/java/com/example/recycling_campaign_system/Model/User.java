@@ -2,8 +2,10 @@ package com.example.recycling_campaign_system.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_users")
 public class User {
     @Id
     private Integer id;
