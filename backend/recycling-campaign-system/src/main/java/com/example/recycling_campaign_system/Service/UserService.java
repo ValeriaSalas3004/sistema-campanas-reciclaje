@@ -1,4 +1,10 @@
 package com.example.recycling_campaign_system.Service;
 
-public interface UserService {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class UserService {
+
+
 }
