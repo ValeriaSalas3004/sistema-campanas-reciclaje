@@ -9,6 +9,10 @@ import java.util.Optional;
 @Repository
 public interface ZoneRepository extends JpaRepository<RecollectionZone,Long> {
 
+    boolean existsByLocation(String location);
+
+    Optional<RecollectionZone> findById(Long id);
+
     Optional<RecollectionZone> findByLocation(String location);
 
     Optional<RecollectionZone> findBySchedule(String schedule);
