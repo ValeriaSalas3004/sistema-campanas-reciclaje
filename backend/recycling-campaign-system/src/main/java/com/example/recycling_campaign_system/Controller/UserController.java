@@ -49,6 +49,19 @@ public class UserController {
         return ResponseEntity.ok(this.service.findByIdUser(id));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<?> editUser(@PathVariable Integer id, @RequestBody User user){
+        User updatedUser = service.editUser(id, user);
+
+        if (updatedUser == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Usuario no encontrado");
+        }
+
+        return ResponseEntity.ok(updatedUser);
+    }
+
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserLoginDTO dto) {
 
