@@ -70,5 +70,9 @@ public class UserController {
         return ResponseEntity.ok("Bienvenido " + user.getName());
     }
 
-    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
+        service.delete(id);
+        return ResponseEntity.ok("Usuario eliminado");
+    }
 }
