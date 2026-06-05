@@ -9,6 +9,10 @@ import java.util.Optional;
 @Repository
 public interface WasteRepository extends JpaRepository<WasteType, Long> {
 
+    Boolean existsByType(String type);
+
+    Optional<WasteType> findById(Long id);
+
     Optional<WasteType> findByWeight(Double weight);
 
     Optional<WasteType> findByType(String type);
