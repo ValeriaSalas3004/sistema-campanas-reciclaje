@@ -35,6 +35,23 @@ public class UserService {
         return null;
     }
 
+    public User editUser(Integer id, User userEd){
+        Optional<User> userOp = this.repository.findById(id);
+
+        if (userOp.isPresent()) {
+            User user = userOp.get();
+
+            user.setName(userEd.getName());
+            user.setEmail(userEd.getEmail());
+            user.setPassword(userEd.getPassword());
+            user.setRole(userEd.getRole());
+
+            this.repository.save(user);
+        }
+        return null;
+    }
+
+
 
 
 }
