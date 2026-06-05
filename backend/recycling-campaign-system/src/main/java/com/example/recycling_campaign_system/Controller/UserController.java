@@ -35,6 +35,17 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(user));
     }
 
-    
+    @GetMapping
+    public ResponseEntity<?> findAll() {
+        return ResponseEntity.ok(this.service.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findByName(@PathVariable Integer id) {
+        if (this.service.findByIdUser(id) == null) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("El id no se encuentra registrado");
+        }
+        return ResponseEntity.ok(this.service.findByIdUser(id));
+    }
 
 }
