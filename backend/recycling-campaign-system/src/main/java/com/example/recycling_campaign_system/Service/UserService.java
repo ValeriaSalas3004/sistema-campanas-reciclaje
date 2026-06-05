@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +22,19 @@ public class UserService {
         }
         return this.repository.save(user);
     }
-    
+
+    public List<User> findAll(){
+        return this.repository.findAll();
+    }
+
+    public User findByIdUser(Integer id){
+        Optional<User> optional = this.repository.findById(id);
+        if (optional.isPresent()){
+            return optional.get();
+        }
+        return null;
+    }
+
+
+
 }
