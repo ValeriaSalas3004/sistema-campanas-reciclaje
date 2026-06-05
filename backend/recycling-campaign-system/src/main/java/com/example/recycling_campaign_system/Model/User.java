@@ -1,19 +1,22 @@
 package com.example.recycling_campaign_system.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
+    @Column(name = "email", nullable = false, length = 100, unique = true)
     private String email;
+    @Column(name = "password", nullable = false, length = 255)
     private String password;
+    @Column(name = "role", nullable = false, length = 100)
     private String role;
-
     public User() {
     }
 
