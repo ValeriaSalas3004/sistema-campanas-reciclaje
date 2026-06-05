@@ -1,5 +1,6 @@
 package com.example.recycling_campaign_system.Controller;
 
+import com.example.recycling_campaign_system.Model.DTO.UserLoginDTO;
 import com.example.recycling_campaign_system.Model.User;
 import com.example.recycling_campaign_system.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,4 +49,26 @@ public class UserController {
         return ResponseEntity.ok(this.service.findByIdUser(id));
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody UserLoginDTO dto) {
+
+        if (!dto.getEmail().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            return ResponseEntity.badRequest().body("Email inválido. Formato válido: xxx@xx.xx");
+        }
+
+        if (!dto.getPassword().matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$")) {
+            return ResponseEntity.badRequest().body("Password inválido. Debe contener 8 caracteres, al menos una mayúscula, al menos un número y al menos un símbolo");
+        }
+
+        User user = service.findUserByEmailAndPassword(dto.getEmail(), dto.getPassword());
+
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Credenciales incorrectas");
+        }
+
+        return ResponseEntity.ok("Bienvenido " + user.getName());
+    }
+
+    
 }
