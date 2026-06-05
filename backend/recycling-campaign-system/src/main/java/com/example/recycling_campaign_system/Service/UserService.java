@@ -52,6 +52,14 @@ public class UserService {
     }
 
 
+    public User findUserByEmailAndPassword(String email, String password){
+        return this.repository.findUserByEmailAndPassword(email, password);
+    }
+
+
+    public void delete(Integer id){
+        this.repository.deleteById(id);
+    }
 
 
 }
