@@ -1,12 +1,14 @@
 package com.example.recycling_campaign_system.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 @Entity
 @Table(name="tb_campanas")
 public class Campanas {
+    @Id
     private Integer id;
     private String title;
     private String description;

@@ -45,4 +45,8 @@ public class CampanasService {
         }
         return null;
     }
+
+    public List<Campanas> SortByStartDate(){
+        return this.repo.findAllByOrderByStartDateAsc();
+    }
 }
