@@ -1,6 +1,5 @@
 package com.example.recycling_campaign_system.Service;
 
-import com.example.recycling_campaign_system.Model.RecollectionZone;
 import com.example.recycling_campaign_system.Model.WasteType;
 import com.example.recycling_campaign_system.Repository.WasteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ public class WasteService {
     @Autowired
     private WasteRepository repository;
 
-    public RecollectionZone update(WasteType waste) {
+    public WasteType update(WasteType waste) {
         WasteType newWaste = repository.findById(waste.getId()).orElse(null);
 
         if (newWaste != null) {

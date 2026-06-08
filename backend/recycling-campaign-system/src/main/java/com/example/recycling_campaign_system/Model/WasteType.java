@@ -11,6 +11,7 @@ public class WasteType {
     private Long id;
 
     private String type;
+
     private Double weight;
 
     public Long getId() {
