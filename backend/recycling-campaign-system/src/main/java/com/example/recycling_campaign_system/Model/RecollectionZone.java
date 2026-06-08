@@ -1,7 +1,7 @@
 package com.example.recycling_campaign_system.Model;
 
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.*;
 @Entity
 @Table(name = "tb_recollection_zone")
 public class RecollectionZone {
@@ -10,7 +10,10 @@ public class RecollectionZone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String location;
+
+    @NotBlank
     private String schedule;
 
     public Long getId() {

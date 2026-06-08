@@ -4,9 +4,9 @@ import com.example.recycling_campaign_system.Model.RecollectionZone;
 import com.example.recycling_campaign_system.Repository.ZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -27,15 +27,11 @@ public class ZoneService {
 
         if (newZone != null) {
 
-            if (zone.getLocation() != null
-                    && !Objects.equals(zone.getLocation(), "")
-                    && !Objects.equals(zone.getLocation(), " ")) {
+            if (StringUtils.hasText(zone.getLocation())) {
                 newZone.setLocation(zone.getLocation());
             }
 
-            if (zone.getSchedule() != null
-                    && !Objects.equals(zone.getLocation(), "")
-                    && !Objects.equals(zone.getLocation(), " ")) {
+            if (StringUtils.hasText(zone.getSchedule())) {
                 newZone.setSchedule(zone.getSchedule());
             }
 
