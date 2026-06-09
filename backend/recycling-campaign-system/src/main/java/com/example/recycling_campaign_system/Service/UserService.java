@@ -1,65 +1,114 @@
 package com.example.recycling_campaign_system.Service;
 
 import com.example.recycling_campaign_system.Model.User;
+import com.example.recycling_campaign_system.Model.DTO.UserLoginDTO;
+import com.example.recycling_campaign_system.Model.DTO.UserRequestDTO;
+import com.example.recycling_campaign_system.Model.DTO.UserResponseDTO;
 import com.example.recycling_campaign_system.Repository.UserRepository;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
 public class UserService {
-    @Autowired
-    private UserRepository repository;
 
-    public User save(User user){
-        Optional<User> opt = this.repository.findById(user.getId());
-        if (opt.isPresent()){
+    private final UserRepository repository;
+
+    public UserService(UserRepository repository) {
+        this.repository = repository;
+    }
+
+    public UserResponseDTO save(UserRequestDTO dto) {
+
+        if (repository.findByEmail(dto.getEmail()) != null) {
             return null;
         }
-        return this.repository.save(user);
+
+        User user = new User();
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
+        user.setRole(dto.getRole());
+
+        User saved = repository.save(user);
+
+        return toResponseDTO(saved);
     }
 
-    public List<User> findAll(){
-        return this.repository.findAll();
-    }
+    public List<UserResponseDTO> findAll() {
 
-    public User findByIdUser(Integer id){
-        Optional<User> optional = this.repository.findById(id);
-        if (optional.isPresent()){
-            return optional.get();
+        List<User> users = repository.findAll();
+        List<UserResponseDTO> responseList = new ArrayList<>();
+
+        for (User user : users) {
+            responseList.add(toResponseDTO(user));
         }
+
+        return responseList;
+    }
+
+    public UserResponseDTO findByIdUser(Integer id) {
+
+        Optional<User> optional = repository.findById(id);
+
+        if (optional.isPresent()) {
+            return toResponseDTO(optional.get());
+        }
+
         return null;
     }
 
-    public User editUser(Integer id, User userEd){
-        Optional<User> userOp = this.repository.findById(id);
+    public UserResponseDTO editUser(Integer id, UserRequestDTO dto) {
 
-        if (userOp.isPresent()) {
-            User user = userOp.get();
+        Optional<User> optional = repository.findById(id);
 
-            user.setName(userEd.getName());
-            user.setEmail(userEd.getEmail());
-            user.setPassword(userEd.getPassword());
-            user.setRole(userEd.getRole());
-
-            this.repository.save(user);
+        if (optional.isEmpty()) {
+            return null;
         }
-        return null;
+
+        User user = optional.get();
+
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
+        user.setRole(dto.getRole());
+
+        User updated = repository.save(user);
+
+        return toResponseDTO(updated);
     }
 
+    public UserResponseDTO login(UserLoginDTO dto) {
 
-    public User findUserByEmailAndPassword(String email, String password){
-        return this.repository.findUserByEmailAndPassword(email, password);
+        User user = repository.findUserByEmailAndPassword(dto.getEmail(), dto.getPassword());
+
+        if (user == null) {
+            return null;
+        }
+
+        return toResponseDTO(user);
     }
 
+    public boolean delete(Integer id) {
 
-    public void delete(Integer id){
-        this.repository.deleteById(id);
+        Optional<User> optional = repository.findById(id);
+
+        if (optional.isEmpty()) {
+            return false;
+        }
+
+        repository.deleteById(id);
+        return true;
     }
 
-
+    private UserResponseDTO toResponseDTO(User user) {
+        return new UserResponseDTO(
+                user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getRole()
+        );
+    }
 }
