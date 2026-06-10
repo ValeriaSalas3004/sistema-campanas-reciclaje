@@ -72,11 +72,11 @@ public class ReportService {
     }
 
     public List<Report> findByZoneId(Long id){
-        return this.repo.findByZoneId(id);
+        return this.repo.findByRecoZoneId(id);
     }
 
     public List<Report> findByWasteId(Long id){
-        return this.repo.findByWasteId(id);
+        return this.repo.findByWasteTypeId(id);
     }
 
 }

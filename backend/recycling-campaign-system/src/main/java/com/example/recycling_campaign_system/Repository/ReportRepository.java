@@ -13,7 +13,7 @@ public interface ReportRepository extends JpaRepository<Report, Integer> {
 
     List<Report> findByUserId(Integer id);
 
-    List<Report> findByZoneId(Long id);
+    List<Report> findByRecoZoneId(Long id);
 
-    List<Report> findByWasteId(Long id);
+    List<Report> findByWasteTypeId(Long id);
 }

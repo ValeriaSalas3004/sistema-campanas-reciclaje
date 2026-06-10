@@ -31,23 +31,23 @@ public class ReportController {
     }
 
     @GetMapping("/campaing/{campaignId}")
-    public ResponseEntity<?> findByCampaignId(@PathVariable Integer id) {
-        return ResponseEntity.ok(this.service.findByCampaignId(id));
+    public ResponseEntity<?> findByCampaignId(@PathVariable Integer campaignId) {
+        return ResponseEntity.ok(this.service.findByCampaignId(campaignId));
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<?> findByUserId(@PathVariable Integer id) {
-        return ResponseEntity.ok(this.service.findByUserid(id));
+    public ResponseEntity<?> findByUserId(@PathVariable Integer userId) {
+        return ResponseEntity.ok(this.service.findByUserid(userId));
     }
 
-    @GetMapping("/zone/{zoneId")
-    public ResponseEntity<?> findByZoneId(@PathVariable Long id) {
-        return ResponseEntity.ok(this.service.findByZoneId(id));
+    @GetMapping("/zone/{zoneId}")
+    public ResponseEntity<?> findByZoneId(@PathVariable Long zoneId) {
+        return ResponseEntity.ok(this.service.findByZoneId(zoneId));
     }
 
-    @GetMapping("/waste/{wasteTypeId")
-    public ResponseEntity<?> findByWasteId(@PathVariable Long id) {
-        return ResponseEntity.ok(this.service.findByWasteId(id));
+    @GetMapping("/waste/{wasteTypeId}")
+    public ResponseEntity<?> findByWasteId(@PathVariable Long wasteTypeId) {
+        return ResponseEntity.ok(this.service.findByWasteId(wasteTypeId));
     }
 
     @PostMapping

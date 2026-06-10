@@ -1,6 +1,9 @@
 package com.example.recycling_campaign_system.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_users")
@@ -17,6 +20,10 @@ public class User {
     private String password;
     @Column(name = "role", nullable = false, length = 100)
     private String role;
+
+    @OneToMany (mappedBy = "user")
+    @JsonIgnore
+    private List<Report> listReport;
     public User() {
     }
 

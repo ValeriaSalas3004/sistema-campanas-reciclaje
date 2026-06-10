@@ -1,7 +1,11 @@
 package com.example.recycling_campaign_system.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+
+import java.util.List;
+
 @Entity
 @Table(name = "tb_recollection_zone")
 public class RecollectionZone {
@@ -15,6 +19,10 @@ public class RecollectionZone {
 
     @NotBlank
     private String schedule;
+
+    @OneToMany (mappedBy = "recoZone")
+    @JsonIgnore
+    private List<Report> listReport;
 
     public Long getId() {
         return id;

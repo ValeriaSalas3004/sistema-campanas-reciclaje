@@ -1,19 +1,28 @@
 package com.example.recycling_campaign_system.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Table(name="tb_campaigns")
 public class Campaign {
     @Id
     private Integer id;
+    @Column(name = "title", nullable = false)
     private String title;
+    @Column(name = "description", nullable = false)
     private String description;
+    @Column(name = "startDate", nullable = false)
     private LocalDate startDate;
+    @Column(name = "endDate", nullable = false)
     private LocalDate endDate;
+
+    @OneToMany
+    @JsonIgnore
+    private List<Report> listReport;
 
     public Campaign() {
 

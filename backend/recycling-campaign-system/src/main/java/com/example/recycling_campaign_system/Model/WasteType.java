@@ -1,6 +1,9 @@
 package com.example.recycling_campaign_system.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_waste_type")
@@ -13,6 +16,10 @@ public class WasteType {
     private String type;
 
     private Double weight;
+
+    @OneToMany (mappedBy = "wasteType")
+    @JsonIgnore
+    private List<Report> listReport;
 
     public Long getId() {
         return id;
