@@ -49,6 +49,14 @@ public class CampanasController {
         if (campana == null) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("La campaña con id " + campana.getId() + " ya esta registrada.");
         }
+        if(campana.getStartDate()!=null && campana.getEndDate()!=null){
+            if(campana.getEndDate().isBefore(campana.getStartDate())){
+                Map<String,String> dateError = new HashMap<>();
+                dateError.put("endDate", "La fecha de finalización no puede ser anterior a la fecha de inicio");
+
+                return ResponseEntity.badRequest().body(dateError);
+            }
+        }
         this.service.addCampana(campana);
         return ResponseEntity.status(HttpStatus.CREATED).body(campana);
     }
