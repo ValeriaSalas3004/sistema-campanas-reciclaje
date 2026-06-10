@@ -48,6 +48,15 @@ public class ZoneService {
         repository.deleteById(id);
     }
 
+    public RecollectionZone findById(Long id) {
+        Optional<RecollectionZone> optional = repository.findById(id);
+        if (optional.isPresent()) {
+            RecollectionZone recoZone=optional.get();
+            return recoZone;
+        }
+        return null;
+    }
+
     public Optional<RecollectionZone> findByLocation(String location) {
         return repository.findByLocation(location);
     }

@@ -1,7 +1,7 @@
 package com.example.recycling_campaign_system.Controller;
 
-import com.example.recycling_campaign_system.Model.Campanas;
-import com.example.recycling_campaign_system.Service.CampanasService;
+import com.example.recycling_campaign_system.Model.Campaign;
+import com.example.recycling_campaign_system.Service.CampaignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +15,9 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/campaigns")
-public class CampanasController {
+public class CampaignController {
     @Autowired
-    private CampanasService service;
+    private CampaignService service;
 
     @GetMapping
     public ResponseEntity<?> listCampanas() {
@@ -38,7 +38,7 @@ public class CampanasController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addCampana(@Validated @RequestBody Campanas campana, BindingResult result) {
+    public ResponseEntity<?> addCampana(@Validated @RequestBody Campaign campaign, BindingResult result) {
         if (result.hasErrors()) {
             Map<String, String> errors = new HashMap<>();
             for (FieldError error : result.getFieldErrors()) {
@@ -46,23 +46,23 @@ public class CampanasController {
             }
             return ResponseEntity.badRequest().body(errors);
         }
-        if (campana == null) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("La campaña con id " + campana.getId() + " ya esta registrada.");
+        if (campaign == null) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("La campaña con id " + campaign.getId() + " ya esta registrada.");
         }
-        if(campana.getStartDate()!=null && campana.getEndDate()!=null){
-            if(campana.getEndDate().isBefore(campana.getStartDate())){
+        if(campaign.getStartDate()!=null && campaign.getEndDate()!=null){
+            if(campaign.getEndDate().isBefore(campaign.getStartDate())){
                 Map<String,String> dateError = new HashMap<>();
                 dateError.put("endDate", "La fecha de finalización no puede ser anterior a la fecha de inicio");
 
                 return ResponseEntity.badRequest().body(dateError);
             }
         }
-        this.service.addCampana(campana);
-        return ResponseEntity.status(HttpStatus.CREATED).body(campana);
+        this.service.addCampana(campaign);
+        return ResponseEntity.status(HttpStatus.CREATED).body(campaign);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> editCampana(@Validated @PathVariable Integer id, @RequestBody Campanas campana, BindingResult result){
+    public ResponseEntity<?> editCampana(@Validated @PathVariable Integer id, @RequestBody Campaign campaign, BindingResult result){
         if (result.hasErrors()) {
             Map<String, String> errors = new HashMap<>();
             for (FieldError error : result.getFieldErrors()) {
@@ -70,10 +70,10 @@ public class CampanasController {
             }
             return ResponseEntity.badRequest().body(errors);
         }
-        if (this.service.editCampana(id,campana) == null) {
+        if (this.service.editCampana(id,campaign) == null) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("La campaña " + id + " no existe");
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(campana);
+        return ResponseEntity.status(HttpStatus.CREATED).body(campaign);
 
     }
 

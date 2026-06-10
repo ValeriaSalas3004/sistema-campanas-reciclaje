@@ -6,8 +6,8 @@ import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 @Entity
-@Table(name="tb_campanas")
-public class Campanas {
+@Table(name="tb_campaigns")
+public class Campaign {
     @Id
     private Integer id;
     private String title;
@@ -15,7 +15,7 @@ public class Campanas {
     private LocalDate startDate;
     private LocalDate endDate;
 
-    public Campanas() {
+    public Campaign() {
 
     }
 
