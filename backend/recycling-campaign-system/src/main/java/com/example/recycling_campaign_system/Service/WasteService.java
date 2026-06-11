@@ -30,7 +30,7 @@ public class WasteService {
                 newWaste.setWeight(waste.getWeight());
             }
 
-            repository.save(newWaste);
+            return repository.save(newWaste);
         }
         return null;
     }
