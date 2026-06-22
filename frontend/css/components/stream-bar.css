@@ -1,0 +1,46 @@
+.stream-bar {
+  display: flex;
+  height: 6px;
+}
+
+.stream-bar__segment {
+  flex: 1;
+}
+
+.stream-bar__segment--vidrio {
+  background: var(--color-vidrio);
+}
+
+.stream-bar__segment--papel {
+  background: var(--color-papel);
+}
+
+.stream-bar__segment--aviso {
+  background: var(--color-aviso);
+}
+
+.stream-bar__segment--alerta {
+  background: var(--color-alerta);
+}
+
+/* Variante: barra de avance de una campaña (reportes recolectados vs. meta) */
+.stream-progress {
+  position: relative;
+  height: 10px;
+  border-radius: var(--radius-sm);
+  background: var(--color-linea);
+  overflow: hidden;
+}
+
+.stream-progress__fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--color-vidrio) 0%,
+    var(--color-papel) 60%,
+    var(--color-aviso) 100%
+  );
+  transition: width 0.4s ease;
+}

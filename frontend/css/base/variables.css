@@ -1,0 +1,31 @@
+:root {
+  /* Paleta — lenguaje de señalética de reciclaje, no genérico */
+  --color-pulpa: #ede9de;
+  --color-pulpa-alta: #f7f5ee;
+  --color-tinta: #1e2a22;
+  --color-tinta-suave: #4a564d;
+  --color-vidrio: #2f6f4e;
+  --color-vidrio-oscuro: #234f38;
+  --color-papel: #3b6fa0;
+  --color-aviso: #d9a22a;
+  --color-alerta: #9c4a3c;
+  --color-linea: #d3cdba;
+  --color-blanco: #ffffff;
+
+  /* Tipografía */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* Espaciado */
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
+  --space-xl: 3.6rem;
+
+  /* Layout */
+  --sidebar-width: 220px;
+  --header-height: 88px;
+  --radius-sm: 3px;
+}

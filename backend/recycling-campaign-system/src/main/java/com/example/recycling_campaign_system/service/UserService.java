@@ -6,6 +6,7 @@ import com.example.recycling_campaign_system.model.dto.UserRequestDTO;
 import com.example.recycling_campaign_system.model.dto.UserResponseDTO;
 import com.example.recycling_campaign_system.repository.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -70,10 +71,18 @@ public class UserService {
 
         User user = optional.get();
 
-        user.setName(dto.getName());
-        user.setEmail(dto.getEmail());
-        user.setPassword(dto.getPassword());
-        user.setRole(dto.getRole());
+        if (StringUtils.hasText(dto.getName())) {
+            user.setName(dto.getName());
+        }
+        if (StringUtils.hasText(dto.getEmail())) {
+            user.setEmail(dto.getEmail());
+        }
+        if (StringUtils.hasText(dto.getPassword())) {
+            user.setPassword(dto.getPassword());
+        }
+        if (StringUtils.hasText(dto.getRole())) {
+            user.setRole(dto.getRole());
+        }
 
         User updated = repository.save(user);
 
