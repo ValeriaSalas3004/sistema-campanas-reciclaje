@@ -35,7 +35,7 @@ export async function renderZones(container) {
           emptyMessage: "Aún no hay zonas registradas.",
           getActions: isGestor
             ? (zone) => [
-                { label: "Editar", variant: "ghost", onClick: () => openForm(zone) },
+                { label: "Editar", variant: "warning", onClick: () => openForm(zone) },
                 { label: "Eliminar", variant: "danger", onClick: () => remove(zone) },
               ]
             : undefined,

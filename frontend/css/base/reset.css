@@ -12,8 +12,13 @@ body {
 
 body {
   min-height: 100vh;
-  background: var(--color-pulpa);
-  color: var(--color-tinta);
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+body.login-body {
+  overflow: auto;
 }
 
 a {

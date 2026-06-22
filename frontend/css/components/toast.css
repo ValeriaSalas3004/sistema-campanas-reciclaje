@@ -11,16 +11,17 @@
 .toast {
   padding: 0.7rem 1rem;
   border-radius: var(--radius-sm);
-  background: var(--color-tinta);
-  color: var(--color-pulpa-alta);
+  background: var(--card-bg);
+  color: var(--text-light);
   font-size: 0.85rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border-left: 3px solid var(--color-vidrio);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent);
   animation: toast-in 0.15s ease;
 }
 
 .toast--error {
-  border-left-color: var(--color-alerta);
+  border-left-color: var(--danger);
 }
 
 @keyframes toast-in {

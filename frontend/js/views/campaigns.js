@@ -104,7 +104,7 @@ export async function renderCampaigns(container) {
     }
 
     if (isGestor) {
-      actions.push({ label: "Editar", variant: "ghost", onClick: () => openForm(campaign) });
+      actions.push({ label: "Editar", variant: "warning", onClick: () => openForm(campaign) });
       actions.push({ label: "Eliminar", variant: "danger", onClick: () => remove(campaign) });
     }
 

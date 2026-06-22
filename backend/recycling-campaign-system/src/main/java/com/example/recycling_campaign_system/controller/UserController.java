@@ -6,6 +6,7 @@ import com.example.recycling_campaign_system.model.dto.UserResponseDTO;
 import com.example.recycling_campaign_system.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -54,6 +55,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('GESTOR') or #id == principal.id")
     public ResponseEntity<?> editUser(@PathVariable Integer id, @RequestBody UserRequestDTO dto) {
 
         UserResponseDTO updatedUser = service.editUser(id, dto);

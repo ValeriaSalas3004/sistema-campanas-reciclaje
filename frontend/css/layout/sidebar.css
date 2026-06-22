@@ -1,42 +1,103 @@
-.app-sidebar {
+.sidebar {
   width: var(--sidebar-width);
   flex-shrink: 0;
-  padding: var(--space-lg) var(--space-sm);
-  border-right: 1px solid var(--color-linea);
+  background: var(--card-bg);
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  height: 100vh;
 }
 
-.app-sidebar__link {
+.sidebar-header {
+  padding: var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.sidebar-header h2 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-xs);
+}
+
+.sidebar-header p {
+  color: var(--accent-highlight);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: var(--space-md) 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.nav-btn {
   display: block;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-sm);
-  font-weight: 500;
-  color: var(--color-tinta-suave);
+  background: none;
+  border: none;
+  border-left: 4px solid transparent;
+  color: var(--text-muted);
+  padding: 14px 22px;
+  text-align: left;
+  font-size: 0.95rem;
+  width: 100%;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.app-sidebar__link:hover {
-  background: var(--color-pulpa-alta);
-  color: var(--color-tinta);
+.nav-btn:hover {
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.app-sidebar__link.is-active {
-  background: var(--color-vidrio);
-  color: var(--color-blanco);
+.nav-btn.is-active {
+  color: var(--text-light);
+  background: var(--accent);
+  border-left-color: var(--accent-highlight);
+}
+
+.sidebar-footer {
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.logout-btn {
+  color: var(--danger);
+}
+
+.logout-btn:hover {
+  background: rgba(207, 102, 121, 0.1);
+  border-left-color: var(--danger);
+  color: var(--danger);
 }
 
 @media (max-width: 760px) {
-  .app-sidebar {
+  .sidebar {
     width: 100%;
+    height: auto;
     flex-direction: row;
     overflow-x: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--color-linea);
-    padding: var(--space-sm);
   }
 
-  .app-sidebar__link {
+  .sidebar-header,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .nav-btn {
     white-space: nowrap;
+    border-left: none;
+    border-bottom: 4px solid transparent;
+  }
+
+  .nav-btn.is-active {
+    border-bottom-color: var(--accent-highlight);
   }
 }

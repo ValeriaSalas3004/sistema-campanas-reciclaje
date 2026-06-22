@@ -2,30 +2,30 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  font-family: var(--font-mono);
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  font-weight: 600;
 }
 
-.badge--vidrio {
-  background: rgba(47, 111, 78, 0.12);
-  color: var(--color-vidrio-oscuro);
+.badge--success {
+  background: rgba(129, 199, 132, 0.15);
+  color: var(--success);
 }
 
-.badge--papel {
-  background: rgba(59, 111, 160, 0.12);
-  color: var(--color-papel);
+.badge--warning {
+  background: rgba(242, 201, 76, 0.15);
+  color: var(--warning);
 }
 
-.badge--aviso {
-  background: rgba(217, 162, 42, 0.16);
-  color: #8a6313;
+.badge--danger {
+  background: rgba(207, 102, 121, 0.15);
+  color: var(--danger);
 }
 
-.badge--alerta {
-  background: rgba(156, 74, 60, 0.12);
-  color: var(--color-alerta);
+.badge--muted {
+  background: rgba(158, 158, 158, 0.12);
+  color: var(--text-muted);
 }

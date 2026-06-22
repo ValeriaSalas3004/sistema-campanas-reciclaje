@@ -10,8 +10,8 @@ export const session = {
     return read() !== null;
   },
 
-  setUser(user) {
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ guest: false, ...user }));
+  setUser(user, token) {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ guest: false, ...user, token }));
   },
 
   setGuest() {
@@ -30,6 +30,11 @@ export const session = {
   current() {
     const s = read();
     return s && !s.guest ? s : null;
+  },
+
+  token() {
+    const user = this.current();
+    return user ? user.token : null;
   },
 
   role() {

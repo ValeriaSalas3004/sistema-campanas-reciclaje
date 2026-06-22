@@ -5,6 +5,10 @@ import com.example.recycling_campaign_system.model.dto.UserLoginDTO;
 import com.example.recycling_campaign_system.model.dto.UserRequestDTO;
 import com.example.recycling_campaign_system.model.dto.UserResponseDTO;
 import com.example.recycling_campaign_system.repository.UserRepository;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -16,9 +20,13 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
 
-    public UserService(UserRepository repository) {
+    public UserService(UserRepository repository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
         this.repository = repository;
+        this.passwordEncoder = passwordEncoder;
+        this.authenticationManager = authenticationManager;
     }
 
     public UserResponseDTO save(UserRequestDTO dto) {
@@ -30,7 +38,7 @@ public class UserService {
         User user = new User();
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
-        user.setPassword(dto.getPassword());
+        user.setPassword(passwordEncoder.encode(dto.getPassword()));
         user.setRole(dto.getRole());
 
         User saved = repository.save(user);
@@ -78,7 +86,7 @@ public class UserService {
             user.setEmail(dto.getEmail());
         }
         if (StringUtils.hasText(dto.getPassword())) {
-            user.setPassword(dto.getPassword());
+            user.setPassword(passwordEncoder.encode(dto.getPassword()));
         }
         if (StringUtils.hasText(dto.getRole())) {
             user.setRole(dto.getRole());
@@ -91,13 +99,17 @@ public class UserService {
 
     public UserResponseDTO login(UserLoginDTO dto) {
 
-        User user = repository.findUserByEmailAndPassword(dto.getEmail(), dto.getPassword());
-
-        if (user == null) {
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getPassword())
+            );
+        } catch (AuthenticationException e) {
             return null;
         }
 
-        return toResponseDTO(user);
+        User user = repository.findByEmail(dto.getEmail());
+
+        return user != null ? toResponseDTO(user) : null;
     }
 
     public boolean delete(Integer id) {

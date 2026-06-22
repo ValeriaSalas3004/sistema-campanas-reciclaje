@@ -50,16 +50,22 @@ export async function renderProfile(container) {
     event.preventDefault();
     if (!validateRequired(form, ["name", "email"])) return;
 
+    const email = form.email.value.trim();
+    const newPassword = form.password.value;
+    const [, currentPassword] = atob(session.token()).split(":");
+    const effectivePassword = newPassword || currentPassword;
+
     const payload = {
       name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      password: form.password.value,
+      email,
+      password: newPassword,
       role: user.role,
     };
 
     try {
       const updated = await api.put(`/api/user/${user.id}`, payload);
-      session.setUser(updated);
+      const token = btoa(`${email}:${effectivePassword}`);
+      session.setUser(updated, token);
       showToast("Perfil actualizado.");
     } catch (error) {
       const message = error instanceof ApiError ? error.message : "No se pudo actualizar el perfil.";

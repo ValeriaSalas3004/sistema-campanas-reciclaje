@@ -3,73 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recicla UCR · Campañas de reciclaje</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <title>Recicla UCR · Iniciar sesión</title>
 
   <link rel="stylesheet" href="css/base/variables.css" />
   <link rel="stylesheet" href="css/base/reset.css" />
   <link rel="stylesheet" href="css/base/typography.css" />
-  <link rel="stylesheet" href="css/layout/grid.css" />
-  <link rel="stylesheet" href="css/layout/header.css" />
-  <link rel="stylesheet" href="css/layout/sidebar.css" />
-  <link rel="stylesheet" href="css/components/stream-bar.css" />
   <link rel="stylesheet" href="css/components/buttons.css" />
   <link rel="stylesheet" href="css/components/forms.css" />
-  <link rel="stylesheet" href="css/components/tables.css" />
-  <link rel="stylesheet" href="css/components/badge.css" />
-  <link rel="stylesheet" href="css/components/modal.css" />
   <link rel="stylesheet" href="css/components/toast.css" />
   <link rel="stylesheet" href="css/views/login.css" />
-  <link rel="stylesheet" href="css/views/dashboard.css" />
-  <link rel="stylesheet" href="css/views/campaigns.css" />
-  <link rel="stylesheet" href="css/views/reports.css" />
-  <link rel="stylesheet" href="css/views/zones.css" />
-  <link rel="stylesheet" href="css/views/waste.css" />
-  <link rel="stylesheet" href="css/views/users.css" />
-  <link rel="stylesheet" href="css/views/profile.css" />
 </head>
-<body>
-  <header class="app-header">
-    <div class="app-header__row">
-      <a class="app-header__brand" href="#/dashboard">
-        <span class="app-header__icon" aria-hidden="true">♻</span>
-        Recicla UCR
-      </a>
-      <div class="app-header__session">
-        <span class="app-header__session-label" data-session-summary>Invitado</span>
-        <button class="btn btn--ghost is-hidden" type="button" data-logout>Salir</button>
-      </div>
-    </div>
-    <div class="stream-bar" aria-hidden="true">
-      <span class="stream-bar__segment stream-bar__segment--vidrio"></span>
-      <span class="stream-bar__segment stream-bar__segment--papel"></span>
-      <span class="stream-bar__segment stream-bar__segment--aviso"></span>
-      <span class="stream-bar__segment stream-bar__segment--alerta"></span>
-    </div>
-  </header>
+<body class="login-body">
+  <div class="login-view">
+    <div class="login-card">
+      <span class="eyebrow">Recicla UCR</span>
+      <h1>Inicia sesión</h1>
+      <p>Gestores y voluntarios acceden con su correo y contraseña.</p>
 
-  <div class="app-shell">
-    <nav class="app-sidebar" aria-label="Navegación principal">
-      <a class="app-sidebar__link" data-nav href="#/dashboard">Inicio</a>
-      <a class="app-sidebar__link" data-nav href="#/campaigns">Campañas</a>
-      <a class="app-sidebar__link" data-nav href="#/reports">Reportes</a>
-      <a class="app-sidebar__link" data-nav href="#/zones">Zonas</a>
-      <a class="app-sidebar__link" data-nav href="#/waste">Tipos de residuo</a>
-      <a class="app-sidebar__link is-hidden" data-nav data-nav-users href="#/users">Usuarios</a>
-      <a class="app-sidebar__link is-hidden" data-nav data-nav-profile href="#/profile">Mi perfil</a>
-    </nav>
+      <form id="login-form" novalidate>
+        <div class="form-field">
+          <label for="login-email">Correo</label>
+          <input id="login-email" name="email" type="email" autocomplete="username" required />
+        </div>
+        <div class="form-field">
+          <label for="login-password">Contraseña</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+        <div class="form-actions">
+          <button id="btn-login" class="btn" type="submit" style="width: 100%;">Iniciar sesión</button>
+        </div>
+      </form>
 
-    <main id="app" class="app-content"></main>
+      <div class="login-divider">o</div>
+
+      <button id="btn-guest" class="btn btn--ghost" type="button" style="width: 100%;">
+        Ingresar como ciudadano
+      </button>
+      <p class="login-guest-hint">Podrás ver campañas, reportes, zonas y tipos de residuo sin iniciar sesión.</p>
+    </div>
   </div>
 
   <div class="toast-stack" data-toast-stack aria-live="polite"></div>
 
-  <script type="module" src="js/core/router.js"></script>
+  <script type="module" src="js/login.js"></script>
 </body>
 </html>

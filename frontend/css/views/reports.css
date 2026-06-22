@@ -7,7 +7,8 @@
 
 .reports-filters select {
   padding: 0.45rem 0.7rem;
-  border: 1px solid var(--color-linea);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  background: var(--color-blanco);
+  background: var(--input-bg);
+  color: var(--text-light);
 }

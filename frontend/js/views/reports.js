@@ -77,7 +77,7 @@ export async function renderReports(container) {
             ? (report) =>
                 canEdit(report)
                   ? [
-                      { label: "Editar", variant: "ghost", onClick: () => openForm(report) },
+                      { label: "Editar", variant: "warning", onClick: () => openForm(report) },
                       { label: "Eliminar", variant: "danger", onClick: () => remove(report) },
                     ]
                   : []

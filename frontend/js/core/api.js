@@ -1,3 +1,5 @@
+import { session } from "./session.js";
+
 export const API_BASE = "http://localhost:8080";
 
 export class ApiError extends Error {
@@ -17,11 +19,17 @@ function extractMessage(data) {
 }
 
 async function request(path, { method = "GET", body } = {}) {
+  const token = session.token();
+  const headers = {
+    ...(body !== undefined ? { "Content-Type": "application/json" } : {}),
+    ...(token ? { Authorization: `Basic ${token}` } : {}),
+  };
+
   let response;
   try {
     response = await fetch(`${API_BASE}${path}`, {
       method,
-      headers: body !== undefined ? { "Content-Type": "application/json" } : undefined,
+      headers: Object.keys(headers).length ? headers : undefined,
       body: body !== undefined ? JSON.stringify(body) : undefined,
     });
   } catch {

@@ -35,7 +35,7 @@ export async function renderWaste(container) {
           emptyMessage: "Aún no hay tipos de residuo registrados.",
           getActions: isGestor
             ? (item) => [
-                { label: "Editar", variant: "ghost", onClick: () => openForm(item) },
+                { label: "Editar", variant: "warning", onClick: () => openForm(item) },
                 { label: "Eliminar", variant: "danger", onClick: () => remove(item) },
               ]
             : undefined,

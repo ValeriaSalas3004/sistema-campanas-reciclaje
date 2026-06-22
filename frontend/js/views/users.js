@@ -34,7 +34,7 @@ export async function renderUsers(container) {
               label: "Rol",
               render: (u) => {
                 const badge = document.createElement("span");
-                badge.className = `badge badge--${u.role === "gestor" ? "vidrio" : "papel"}`;
+                badge.className = `badge badge--${u.role === "gestor" ? "success" : "muted"}`;
                 badge.textContent = u.role;
                 return badge;
               },
@@ -43,7 +43,7 @@ export async function renderUsers(container) {
           rows: users,
           emptyMessage: "Aún no hay usuarios registrados.",
           getActions: (u) => {
-            const actions = [{ label: "Editar", variant: "ghost", onClick: () => openForm(u) }];
+            const actions = [{ label: "Editar", variant: "warning", onClick: () => openForm(u) }];
             if (u.id !== currentUser.id) {
               actions.push({ label: "Eliminar", variant: "danger", onClick: () => remove(u) });
             }

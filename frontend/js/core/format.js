@@ -7,12 +7,12 @@ export function formatDate(isoDate) {
 export function campaignStatus(campaign) {
   const today = new Date().toISOString().slice(0, 10);
   if (campaign.startDate && today < campaign.startDate) {
-    return { label: "Próxima", variant: "vidrio" };
+    return { label: "Próxima", variant: "success" };
   }
   if (campaign.endDate && today > campaign.endDate) {
-    return { label: "Finalizada", variant: "aviso" };
+    return { label: "Finalizada", variant: "muted" };
   }
-  return { label: "En curso", variant: "papel" };
+  return { label: "En curso", variant: "warning" };
 }
 
 export function campaignTimeProgress(campaign) {

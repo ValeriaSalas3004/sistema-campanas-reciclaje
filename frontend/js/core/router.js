@@ -1,5 +1,4 @@
 import { session } from "./session.js";
-import { renderLogin } from "../views/login.js";
 import { renderDashboard } from "../views/dashboard.js";
 import { renderCampaigns } from "../views/campaigns.js";
 import { renderReports } from "../views/reports.js";
@@ -8,8 +7,11 @@ import { renderWaste } from "../views/waste.js";
 import { renderUsers } from "../views/users.js";
 import { renderProfile } from "../views/profile.js";
 
+if (!session.hasEntered()) {
+  window.location.href = "../index.html";
+}
+
 const routes = {
-  "#/login": { render: renderLogin, public: true },
   "#/dashboard": { render: renderDashboard },
   "#/campaigns": { render: renderCampaigns },
   "#/reports": { render: renderReports },
@@ -20,8 +22,7 @@ const routes = {
 };
 
 function currentHash() {
-  if (location.hash) return location.hash;
-  return session.hasEntered() ? "#/dashboard" : "#/login";
+  return location.hash || "#/dashboard";
 }
 
 function updateChrome() {
@@ -35,7 +36,11 @@ function updateChrome() {
 
   document.querySelector("[data-nav-users]")?.classList.toggle("is-hidden", !isGestor);
   document.querySelector("[data-nav-profile]")?.classList.toggle("is-hidden", !isLoggedIn);
-  document.querySelector("[data-logout]")?.classList.toggle("is-hidden", !isLoggedIn);
+
+  const logoutBtn = document.querySelector("[data-logout]");
+  if (logoutBtn) {
+    logoutBtn.textContent = isLoggedIn ? "Cerrar sesión" : "Volver al login";
+  }
 
   const summary = document.querySelector("[data-session-summary]");
   if (summary) {
@@ -59,12 +64,8 @@ async function renderRoute() {
   }
 
   if (route.requiresLogin && session.isGuest()) {
-    location.hash = "#/login";
-    return;
-  }
-
-  if (!route.public && !session.hasEntered()) {
-    location.hash = "#/login";
+    app.innerHTML = '<p class="view-empty">Debes iniciar sesión para ver esta sección.</p>';
+    updateChrome();
     return;
   }
 
@@ -75,7 +76,7 @@ async function renderRoute() {
 
 document.querySelector("[data-logout]")?.addEventListener("click", () => {
   session.clear();
-  location.hash = "#/login";
+  window.location.href = "../index.html";
 });
 
 window.addEventListener("hashchange", renderRoute);
