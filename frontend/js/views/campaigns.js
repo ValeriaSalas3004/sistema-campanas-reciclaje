@@ -27,7 +27,7 @@ export async function renderCampaigns(container) {
     tableWrap.innerHTML = '<p class="view-empty">Cargando…</p>';
 
     try {
-      const campaigns = await api.get("/campaigns");
+      const campaigns = await api.get("/api/campaigns");
       let enrolledCampaignIds = new Map();
       if (isVoluntario) {
         const enrollments = await api.get(`/enrollments/user/${user.id}`);
@@ -134,7 +134,7 @@ export async function renderCampaigns(container) {
   async function remove(campaign) {
     if (!confirm(`¿Eliminar la campaña "${campaign.title}"?`)) return;
     try {
-      await api.del(`/campaigns/${campaign.id}`);
+      await api.del(`/api/campaigns/${campaign.id}`);
       showToast("Campaña eliminada.");
       load();
     } catch (error) {
@@ -187,10 +187,10 @@ export async function renderCampaigns(container) {
 
       try {
         if (isEdit) {
-          await api.put(`/campaigns/${campaign.id}`, payload);
+          await api.put(`/api/campaigns/${campaign.id}`, payload);
           showToast("Campaña actualizada.");
         } else {
-          await api.post("/campaigns", payload);
+          await api.post("/api/campaigns", payload);
           showToast("Campaña creada.");
         }
         close();
