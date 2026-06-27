@@ -16,7 +16,7 @@ import java.util.Map;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/campaigns")
+@RequestMapping("api/campaigns")
 public class CampaignController {
     @Autowired
     private CampaignService service;
