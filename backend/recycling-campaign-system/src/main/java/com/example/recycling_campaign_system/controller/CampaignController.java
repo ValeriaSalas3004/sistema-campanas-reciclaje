@@ -2,6 +2,7 @@ package com.example.recycling_campaign_system.controller;
 
 import com.example.recycling_campaign_system.model.Campaign;
 import com.example.recycling_campaign_system.service.CampaignService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +40,8 @@ public class CampaignController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addCampana(@Validated @RequestBody Campaign campaign, BindingResult result) {
+    public ResponseEntity<?> addCampana(@Valid @RequestBody Campaign campaign, BindingResult result) {
+
         if (result.hasErrors()) {
             Map<String, String> errors = new HashMap<>();
             for (FieldError error : result.getFieldErrors()) {
@@ -47,21 +49,19 @@ public class CampaignController {
             }
             return ResponseEntity.badRequest().body(errors);
         }
-        if (campaign == null) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("La campaña con id " + campaign.getId() + " ya esta registrada.");
-        }
-        if(campaign.getStartDate()!=null && campaign.getEndDate()!=null){
-            if(campaign.getEndDate().isBefore(campaign.getStartDate())){
-                Map<String,String> dateError = new HashMap<>();
-                dateError.put("endDate", "La fecha de finalización no puede ser anterior a la fecha de inicio");
 
+        if (campaign.getStartDate() != null && campaign.getEndDate() != null) {
+            if (campaign.getEndDate().isBefore(campaign.getStartDate())) {
+                Map<String, String> dateError = new HashMap<>();
+                dateError.put("endDate", "La fecha de finalización no puede ser anterior a la fecha de inicio");
                 return ResponseEntity.badRequest().body(dateError);
             }
         }
-        this.service.addCampana(campaign);
-        return ResponseEntity.status(HttpStatus.CREATED).body(campaign);
-    }
 
+        Campaign saved = this.service.addCampana(campaign);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+    }
     @PutMapping("/{id}")
     public ResponseEntity<?> editCampana(@Validated @PathVariable Integer id, @RequestBody Campaign campaign, BindingResult result){
         if (result.hasErrors()) {
