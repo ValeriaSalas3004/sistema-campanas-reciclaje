@@ -79,7 +79,7 @@ export async function renderProfile(container) {
     const tableWrap = container.querySelector("[data-enrollments-table]");
     tableWrap.innerHTML = '<p class="view-empty">Cargando…</p>';
     try {
-      const enrollments = await api.get(`/enrollments/user/${user.id}`);
+      const enrollments = await api.get(`/api/enrollments/user/${user.id}`);
       tableWrap.innerHTML = "";
       tableWrap.appendChild(
         renderTable({
@@ -95,7 +95,7 @@ export async function renderProfile(container) {
               variant: "danger",
               onClick: async () => {
                 try {
-                  await api.del(`/enrollments/${e.id}`);
+                  await api.del(`/api/enrollments/${e.id}`);
                   showToast("Inscripción cancelada.");
                   loadEnrollments();
                 } catch (error) {

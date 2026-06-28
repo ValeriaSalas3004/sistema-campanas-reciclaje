@@ -87,6 +87,35 @@ export async function renderReports(container) {
   }
 
   async function load() {
+  const tableWrap = container.querySelector("[data-reports-table]");
+  tableWrap.innerHTML = '<p class="view-empty">Cargando…</p>';
+
+  try {
+    const reports = await api.get("/api/reports");
+    const campaigns = await api.get("/api/campaigns");
+    const zones = await api.get("/api/zones");
+    const waste = await api.get("/api/waste");
+    const users = isGestor ? await api.get("/api/user") : [];
+
+    console.log({ reports, campaigns, zones, waste, users });
+
+    state = { reports, campaigns, zones, waste, users };
+
+    populateSelect(container.querySelector("[data-filter-campaign]"), campaigns, (c) => c.title);
+    populateSelect(container.querySelector("[data-filter-zone]"), zones, (z) => z.location);
+    populateSelect(container.querySelector("[data-filter-waste]"), waste, (w) => w.type);
+
+    renderRows();
+
+  } catch (error) {
+    console.error("ERROR REAL:", error);
+    tableWrap.innerHTML = '<p class="view-empty">No se pudieron cargar los reportes.</p>';
+    showToast(error.message, { variant: "error" });
+  }
+}
+
+
+  /*async function load() {
     const tableWrap = container.querySelector("[data-reports-table]");
     tableWrap.innerHTML = '<p class="view-empty">Cargando…</p>';
     try {
@@ -108,7 +137,7 @@ export async function renderReports(container) {
       tableWrap.innerHTML = '<p class="view-empty">No se pudieron cargar los reportes.</p>';
       showToast(error.message, { variant: "error" });
     }
-  }
+  }*/
 
   async function remove(report) {
     if (!confirm("¿Eliminar este reporte?")) return;
@@ -127,6 +156,8 @@ export async function renderReports(container) {
       .join("");
   }
 
+  
+console.log(state);
   function openForm(report) {
     const isEdit = Boolean(report);
     const body = document.createElement("div");

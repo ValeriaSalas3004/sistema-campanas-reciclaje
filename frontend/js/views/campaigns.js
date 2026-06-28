@@ -30,7 +30,7 @@ export async function renderCampaigns(container) {
       const campaigns = await api.get("/api/campaigns");
       let enrolledCampaignIds = new Map();
       if (isVoluntario) {
-        const enrollments = await api.get(`/enrollments/user/${user.id}`);
+        const enrollments = await api.get(`/api/enrollments/user/${user.id}`);
         enrollments.forEach((e) => enrolledCampaignIds.set(e.campaign.id, e.id));
       }
 
@@ -113,7 +113,7 @@ export async function renderCampaigns(container) {
 
   async function enroll(campaignId) {
     try {
-      await api.post("/enrollments", { userId: user.id, campaignId });
+      await api.post("/api/enrollments", { userId: user.id, campaignId });
       showToast("Te inscribiste en la campaña.");
       load();
     } catch (error) {
@@ -123,7 +123,7 @@ export async function renderCampaigns(container) {
 
   async function cancelEnrollment(enrollmentId) {
     try {
-      await api.del(`/enrollments/${enrollmentId}`);
+      await api.del(`/api/enrollments/${enrollmentId}`);
       showToast("Inscripción cancelada.");
       load();
     } catch (error) {

@@ -20,10 +20,11 @@ function extractMessage(data) {
 
 async function request(path, { method = "GET", body } = {}) {
   const token = session.token();
-  const headers = {
-    ...(body !== undefined ? { "Content-Type": "application/json" } : {}),
-    ...(token ? { Authorization: `Basic ${token}` } : {}),
-  };
+
+const headers = {
+  ...(body !== undefined ? { "Content-Type": "application/json" } : {}),
+  ...(token ? { Authorization: `Basic ${token}` } : {})
+};
 
   let response;
   try {

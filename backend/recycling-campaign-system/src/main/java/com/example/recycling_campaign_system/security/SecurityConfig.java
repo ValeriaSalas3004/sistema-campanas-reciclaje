@@ -38,17 +38,17 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/user").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/user/login").permitAll()
 
-                        .requestMatchers(HttpMethod.GET, "/campaigns/**", "/reports/**", "/api/zones/**", "/api/waste/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/campaigns/**", "/api/reports/**", "/api/zones/**", "/api/waste/**").permitAll()
 
-                        .requestMatchers(HttpMethod.POST, "/campaigns/**", "/api/zones/**", "/api/waste/**").hasRole("GESTOR")
-                        .requestMatchers(HttpMethod.PUT, "/campaigns/**", "/api/zones/**", "/api/waste/**").hasRole("GESTOR")
-                        .requestMatchers(HttpMethod.DELETE, "/campaigns/**", "/api/zones/**", "/api/waste/**").hasRole("GESTOR")
+                        .requestMatchers(HttpMethod.POST, "/api/campaigns/**", "/api/zones/**", "/api/waste/**").hasRole("GESTOR")
+                        .requestMatchers(HttpMethod.PUT, "/api/campaigns/**", "/api/zones/**", "/api/waste/**").hasRole("GESTOR")
+                        .requestMatchers(HttpMethod.DELETE, "/api/campaigns/**", "/api/zones/**", "/api/waste/**").hasRole("GESTOR")
 
-                        .requestMatchers(HttpMethod.POST, "/reports/**").hasAnyRole("GESTOR", "VOLUNTARIO")
-                        .requestMatchers(HttpMethod.PUT, "/reports/**").hasAnyRole("GESTOR", "VOLUNTARIO")
-                        .requestMatchers(HttpMethod.DELETE, "/reports/**").hasAnyRole("GESTOR", "VOLUNTARIO")
+                        .requestMatchers(HttpMethod.POST, "/api/reports/**").hasAnyRole("GESTOR", "VOLUNTARIO")
+                        .requestMatchers(HttpMethod.PUT, "/api/reports/**").hasAnyRole("GESTOR", "VOLUNTARIO")
+                        .requestMatchers(HttpMethod.DELETE, "/api/reports/**").hasAnyRole("GESTOR", "VOLUNTARIO")
 
-                        .requestMatchers("/enrollments/**").hasAnyRole("GESTOR", "VOLUNTARIO")
+                        .requestMatchers("/api/enrollments/**").hasAnyRole("GESTOR", "VOLUNTARIO")
 
                         .requestMatchers(HttpMethod.GET, "/api/user").hasRole("GESTOR")
                         .requestMatchers(HttpMethod.GET, "/api/user/**").hasAnyRole("GESTOR", "VOLUNTARIO")
