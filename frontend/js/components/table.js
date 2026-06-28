@@ -22,7 +22,7 @@ export function renderTable({ columns, rows, getActions, emptyMessage = "No hay 
   });
   if (getActions) {
     const th = document.createElement("th");
-    th.textContent = "Acciones";
+    th.textContent = "";
     headRow.appendChild(th);
   }
   thead.appendChild(headRow);
