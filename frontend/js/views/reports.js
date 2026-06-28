@@ -91,8 +91,8 @@ export async function renderReports(container) {
     tableWrap.innerHTML = '<p class="view-empty">Cargando…</p>';
     try {
       const [reports, campaigns, zones, waste, users] = await Promise.all([
-        api.get("/reports"),
-        api.get("/campaigns"),
+        api.get("/api/reports"),
+        api.get("/api/campaigns"),
         api.get("/api/zones"),
         api.get("/api/waste"),
         isGestor ? api.get("/api/user") : Promise.resolve([]),
@@ -113,7 +113,7 @@ export async function renderReports(container) {
   async function remove(report) {
     if (!confirm("¿Eliminar este reporte?")) return;
     try {
-      await api.del(`/reports/${report.id}`);
+      await api.del(`/api/reports/${report.id}`);
       showToast("Reporte eliminado.");
       load();
     } catch (error) {
@@ -193,10 +193,10 @@ export async function renderReports(container) {
 
       try {
         if (isEdit) {
-          await api.put(`/reports/${report.id}`, payload);
+          await api.put(`/api/reports/${report.id}`, payload);
           showToast("Reporte actualizado.");
         } else {
-          await api.post("/reports", payload);
+          await api.post("/api/reports", payload);
           showToast("Reporte creado.");
         }
         close();

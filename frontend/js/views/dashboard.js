@@ -24,8 +24,8 @@ export async function renderDashboard(container) {
 
   try {
     const [campaigns, reports, zones, waste] = await Promise.all([
-      api.get("/campaigns"),
-      api.get("/reports"),
+      api.get("/api/campaigns"),
+      api.get("/api/reports"),
       api.get("/api/zones"),
       api.get("/api/waste"),
     ]);
