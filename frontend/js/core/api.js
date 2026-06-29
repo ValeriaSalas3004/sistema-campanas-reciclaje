@@ -1,6 +1,6 @@
 import { session } from "./session.js";
 
-export const API_BASE = "https://sistema-campanas-reciclaje.onrender.com";
+export const API_BASE = "http://localhost:8080";
 
 export class ApiError extends Error {
   constructor(message, status) {
