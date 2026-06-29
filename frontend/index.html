@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recicla UCR · Iniciar sesión</title>
+
+  <link rel="stylesheet" href="css/base/variables.css" />
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/base/typography.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/forms.css" />
+  <link rel="stylesheet" href="css/components/toast.css" />
+  <link rel="stylesheet" href="css/views/login.css" />
+</head>
+<body class="login-body">
+  <div class="login-view">
+    <div class="login-card">
+      <span class="eyebrow">Recicla UCR</span>
+      <h1>Inicia sesión</h1>
+      <p>Gestores y voluntarios acceden con su correo y contraseña.</p>
+
+      <form id="login-form" novalidate>
+        <div class="form-field">
+          <label for="login-email">Correo</label>
+          <input id="login-email" name="email" type="email" autocomplete="username" required />
+        </div>
+        <div class="form-field">
+          <label for="login-password">Contraseña</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+        <div class="form-actions">
+          <button id="btn-login" class="btn" type="submit" style="width: 100%;">Iniciar sesión</button>
+        </div>
+      </form>
+
+      <div class="login-divider">o</div>
+
+      <button id="btn-guest" class="btn btn--ghost" type="button" style="width: 100%;">
+        Ingresar como ciudadano
+      </button>
+      <p class="login-guest-hint">Podrás ver campañas, reportes, zonas y tipos de residuo sin iniciar sesión.</p>
+    </div>
+  </div>
+
+  <div class="toast-stack" data-toast-stack aria-live="polite"></div>
+
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

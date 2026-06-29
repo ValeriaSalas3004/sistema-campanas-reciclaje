@@ -1,0 +1,46 @@
+.login-view {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.login-card {
+  width: min(380px, 100%);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.login-card h1 {
+  margin-bottom: var(--space-xs);
+}
+
+.login-card .eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.login-guest-hint {
+  font-size: 0.82rem;
+  margin-top: var(--space-xs);
+}

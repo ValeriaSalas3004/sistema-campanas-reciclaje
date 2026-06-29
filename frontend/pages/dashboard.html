@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recicla UCR · Panel</title>
+
+  <link rel="stylesheet" href="../css/base/variables.css" />
+  <link rel="stylesheet" href="../css/base/reset.css" />
+  <link rel="stylesheet" href="../css/base/typography.css" />
+  <link rel="stylesheet" href="../css/layout/grid.css" />
+  <link rel="stylesheet" href="../css/layout/sidebar.css" />
+  <link rel="stylesheet" href="../css/components/stream-bar.css" />
+  <link rel="stylesheet" href="../css/components/buttons.css" />
+  <link rel="stylesheet" href="../css/components/forms.css" />
+  <link rel="stylesheet" href="../css/components/tables.css" />
+  <link rel="stylesheet" href="../css/components/badge.css" />
+  <link rel="stylesheet" href="../css/components/modal.css" />
+  <link rel="stylesheet" href="../css/components/toast.css" />
+  <link rel="stylesheet" href="../css/views/dashboard.css" />
+  <link rel="stylesheet" href="../css/views/campaigns.css" />
+  <link rel="stylesheet" href="../css/views/reports.css" />
+  <link rel="stylesheet" href="../css/views/zones.css" />
+  <link rel="stylesheet" href="../css/views/waste.css" />
+  <link rel="stylesheet" href="../css/views/users.css" />
+  <link rel="stylesheet" href="../css/views/profile.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>♻ Recicla UCR</h2>
+        <p data-session-summary>Invitado</p>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Navegación principal">
+        <a class="nav-btn" data-nav href="#/dashboard">Inicio</a>
+        <a class="nav-btn" data-nav href="#/campaigns">Campañas</a>
+        <a class="nav-btn" data-nav href="#/reports">Reportes</a>
+        <a class="nav-btn" data-nav href="#/zones">Zonas</a>
+        <a class="nav-btn" data-nav href="#/waste">Tipos de residuo</a>
+        <a class="nav-btn is-hidden" data-nav data-nav-users href="#/users">Usuarios</a>
+        <a class="nav-btn is-hidden" data-nav data-nav-profile href="#/profile">Mi perfil</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-btn logout-btn" type="button" data-logout>Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main id="app" class="main-content"></main>
+  </div>
+
+  <div class="toast-stack" data-toast-stack aria-live="polite"></div>
+
+  <script type="module" src="../js/core/router.js"></script>
+</body>
+</html>

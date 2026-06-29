@@ -1,0 +1,4136 @@
+{
+  "info": {
+    "_postman_id": "d235f381-28da-4e89-aaf2-5ecf3b0104a7",
+    "name": "Recycling Campaign System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53948614",
+    "_collection_link": "https://go.postman.co/collection/53948614-d235f381-28da-4e89-aaf2-5ecf3b0104a7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/login",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/login",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 03:39:08 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "63"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "5dc82558-001d-4fc4"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09d963e79b860cd-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 2,\n    \"name\": \"Valeria\",\n    \"email\": \"vale@gmail.com\",\n    \"role\": \"ADMIN\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Valeria\",\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\",\r\n  \"role\": \"ADMIN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Valeria\",\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\",\r\n  \"role\": \"ADMIN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 400
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 03:30:49 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "33"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "e2fca987-3a5a-4582"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09d8a123e3a171c-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "El correo ya está registrado"
+            }
+          ]
+        },
+        {
+          "name": "Get User By ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Tiene id\", function () {\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData.id).to.exist;\r",
+                  "});\r",
+                  "``"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/2",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get User By ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/2",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 03:53:10 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "63"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "8e269011-8f15-4942"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09daace1fdc4089-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 2,\n    \"name\": \"Valeria\",\n    \"email\": \"vale@gmail.com\",\n    \"role\": \"ADMIN\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Valeria Edit\",\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\",\r\n  \"role\": \"GESTOR\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/2",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update User",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Valeria Edit\",\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\",\r\n  \"role\": \"GESTOR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/2",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 03:57:12 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "69"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "bd379bc3-be05-4363"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09db0b689a713ca-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 2,\n    \"name\": \"Valeria Edit\",\n    \"email\": \"vale@gmail.com\",\n    \"role\": \"GESTOR\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Es un array\", function () {\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.be.an('array');\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Users",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 03:50:34 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "66"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "1a3ac612-4823-45a9"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09da6ff9c04b1a3-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Valeria\",\n        \"email\": \"vale@gmail.com\",\n        \"role\": \"ADMIN\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Delete User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Valeria Edit\",\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\",\r\n  \"role\": \"GESTOR\"\r\n}"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/2",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete User",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Valeria Edit\",\r\n  \"email\": \"vale@gmail.com\",\r\n  \"password\": \"Password1!\",\r\n  \"role\": \"GESTOR\"\r\n}"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/user/2",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 03:59:39 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "35"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "dc9d023f-464b-43de"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09db4514f47d955-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "Usuario eliminado correctamente"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Waste",
+      "item": [
+        {
+          "name": "Create Waste",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Creado correctamente\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Waste",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 04:21:05 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "42"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "56800536-cdd4-4102"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09dd3b658869aa6-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"type\": \"Plastic\",\n    \"weight\": 5\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Waste",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Waste",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 04:24:47 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "44"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "c88cae14-f1b8-40ed"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09dd921bb27a4da-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"type\": \"Plastic\",\n        \"weight\": 5\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Exists By Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Devuelve boolean\", function () {\r",
+                  "    const data = pm.response.json();\r",
+                  "    pm.expect(data).to.be.a(\"boolean\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/type/Plastic",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste",
+                "type",
+                "Plastic"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Exists By Type",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/type/Plastic",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste",
+                    "type",
+                    "Plastic"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 04:28:03 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "42"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "fc826872-bb1f-4af5"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09ddde5dde5042e-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"type\": \"Plastic\",\n    \"weight\": 5\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get By Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status correcto\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 404]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/id/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste",
+                "id",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get By Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/id/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste",
+                    "id",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 04:29:46 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "42"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "6b658e45-cbb4-4bf1"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09de06a4b40042e-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"type\": \"Plastic\",\n    \"weight\": 5\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Waste",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status correcto\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 400, 404]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 1,\r\n  \"type\": \"Plastic Actualizado\",\r\n  \"weight\": 10.0\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Waste",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 1,\r\n  \"type\": \"Plastic Actualizado\",\r\n  \"weight\": 10.0\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 04:58:48 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "54"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0ab20ad2-b33c-4b86"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e0addfb9849c2-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"type\": \"Plastic Actualizado\",\n    \"weight\": 10\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get By weight",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/weight/10.0",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste",
+                "weight",
+                "10.0"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get By weight",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/weight/10.0",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste",
+                    "weight",
+                    "10.0"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:11:44 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "54"
+                },
+                {
+                  "key": "content-disposition",
+                  "value": "inline;filename=f.txt"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "4e90a8b1-c1c1-48ea"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e1de208337b6f-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"type\": \"Plastic Actualizado\",\n    \"weight\": 10\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete by Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/id/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste",
+                "id",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete by Id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste/id/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste",
+                    "id",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:19:46 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "0"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "1e94d1d5-5694-4b92"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e29acacf41b0d-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "waste"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/waste",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "waste"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:21:57 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "0"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "bad85834-6717-4075"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e2cdcdc958759-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Zone",
+      "item": [
+        {
+          "name": "Create Zone",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Creado correctamente\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"location\": \"San Jose\",\r\n  \"schedule\": \"Lunes\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "zones"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Zone",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"location\": \"San Jose\",\r\n  \"schedule\": \"Lunes\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "zones"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:29:04 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "49"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0909cfb9-4271-4baa"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e37496fd123f3-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"location\": \"San Jose\",\n    \"schedule\": \"Lunes\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Zones",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "zones"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Zones",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "zones"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:30:56 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "51"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "37bb0781-22be-4258"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e3a065e885674-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"location\": \"San Jose\",\n        \"schedule\": \"Lunes\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get by Location",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status correcto\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 404]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones/location/San Jose",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "zones",
+                "location",
+                "San Jose"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by Location",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones/location/San Jose",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "zones",
+                    "location",
+                    "San Jose"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:32:51 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "49"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "edd3bb44-3a0d-4765"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e3cd2bc1a0861-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"location\": \"San Jose\",\n    \"schedule\": \"Lunes\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get by Schedule",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones/schedule/Lunes",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "zones",
+                "schedule",
+                "Lunes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by Schedule",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"type\": \"Plastic\",\r\n  \"weight\": 5.0\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones/schedule/Lunes",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "zones",
+                    "schedule",
+                    "Lunes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:33:54 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "49"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "257ea747-667b-43a9"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e3e5f5ea0ac95-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"location\": \"San Jose\",\n    \"schedule\": \"Lunes\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Update correcto\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 400]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "zones",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 1,\r\n  \"location\": \"Heredia\",\r\n  \"schedule\": \"Martes\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "zones"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:35:57 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "46"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "6e602541-be2f-4020"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e4161df22a4f7-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"location\": \"Heredia\",\n    \"schedule\": \"Martes\"\n}"
+            },
+            {
+              "name": "Delete by Id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "zones",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:37:17 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "0"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "8f0b30e8-b8e8-44ab"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e4354b87c31e6-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 2,\r\n  \"location\": \"San Jose\",\r\n  \"schedule\": \"Lunes\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "zones"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 2,\r\n  \"location\": \"San Jose\",\r\n  \"schedule\": \"Lunes\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/api/zones",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "zones"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:39:35 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "0"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "519b2266-b24b-48bb"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e46af4dd6d9e9-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Campaigns",
+      "item": [
+        {
+          "name": "Create Campaign",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Creado correctamente\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 400]);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"Campaña Reciclaje\",\r\n  \"description\": \"Recolectar plástico\",\r\n  \"startDate\": \"2025-06-01\",\r\n  \"endDate\": \"2025-06-30\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "campaigns"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Campaign",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"Campaña Reciclaje\",\r\n  \"description\": \"Recolectar plástico\",\r\n  \"startDate\": \"2025-06-01\",\r\n  \"endDate\": \"2025-06-30\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "campaigns"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:49:38 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "101"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "e29c2083-5676-4c77"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e55664a7813ca-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"description\": \"Recolectar plástico\",\n    \"endDate\": \"2025-06-30\",\n    \"id\": 1,\n    \"startDate\": \"2025-06-01\",\n    \"title\": \"Campaña Reciclaje\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Campaigns",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "campaigns"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Campaigns",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "campaigns"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:51:11 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "104"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0e5098b5-ce71-4d38"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e57ae1f4496ee-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"description\": \"Recolectar plástico\",\n        \"endDate\": \"2025-06-30\",\n        \"id\": 1,\n        \"startDate\": \"2025-06-01\",\n        \"title\": \"Campaña Reciclaje\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "campaigns",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "campaigns",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:52:26 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "101"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "f36895ca-7680-40e6"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e5982682296ee-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"description\": \"Recolectar plástico\",\n    \"endDate\": \"2025-06-30\",\n    \"id\": 1,\n    \"startDate\": \"2025-06-01\",\n    \"title\": \"Campaña Reciclaje\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Sort by Star Date",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns/startDate",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "campaigns",
+                "startDate"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Sort by Star Date",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns/startDate",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "campaigns",
+                    "startDate"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:54:47 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "124"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "094e4763-a8b4-4ef6"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e5cf50b7d721f-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"description\": \"Recolectar plástico\",\n        \"endDate\": \"2025-06-30\",\n        \"id\": 1,\n        \"startDate\": \"2025-06-01\",\n        \"title\": \"Campaña Reciclaje\"\n    },\n    {\n        \"description\": \"Recolectar plástico\",\n        \"endDate\": \"2025-06-21\",\n        \"id\": 2,\n        \"startDate\": \"2025-06-02\",\n        \"title\": \"Campaña Recolectora\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Update Campaign",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Campaign",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"Campaña Editada\",\r\n  \"description\": \"Actualizada\",\r\n  \"startDate\": \"2025-06-01\",\r\n  \"endDate\": \"2025-07-01\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "campaigns",
+                    "1"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:56:13 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "92"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "8bbfa5d0-3971-477f"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e5f0c8ca4a57b-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"description\": \"Actualizada\",\n    \"endDate\": \"2025-07-01\",\n    \"id\": 1,\n    \"startDate\": \"2025-06-01\",\n    \"title\": \"Campaña Editada\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "campaigns",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/campaigns/2",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "campaigns",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 05:59:08 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "29"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "2c35618c-d893-4eb5"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09e6354bf762593-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "Campaña 2 a sido borrada"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Create Report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Creado correctamente\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 409]);\r",
+                  "});\r",
+                  "``"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"reportDate\": \"2025-06-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Report",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"reportDate\": \"2025-06-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 06:51:12 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "152"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0165e05e-ec02-4779"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09eaf98af9631ea-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"reportDate\": \"2025-06-01\",\n    \"user\": {\n        \"id\": 3,\n        \"name\": null,\n        \"email\": null,\n        \"password\": null,\n        \"role\": null\n    },\n    \"recoZone\": {\n        \"id\": 3,\n        \"location\": null,\n        \"schedule\": null\n    },\n    \"wasteType\": {\n        \"id\": 3,\n        \"type\": null,\n        \"weight\": null\n    },\n    \"campaign\": {\n        \"description\": null,\n        \"endDate\": null,\n        \"id\": 1,\n        \"startDate\": null,\n        \"title\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Reports",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"reportDate\": \"2025-06-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Reports",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"reportDate\": \"2025-06-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 06:52:27 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "245"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "bdac2726-71ad-4340"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09eb16dbe65a38f-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"reportDate\": \"2025-06-01\",\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Valeria\",\n            \"email\": \"vale@gmail.com\",\n            \"password\": \"Password1!\",\n            \"role\": \"ADMIN\"\n        },\n        \"recoZone\": {\n            \"id\": 3,\n            \"location\": \"San Jose\",\n            \"schedule\": \"Lunes\"\n        },\n        \"wasteType\": {\n            \"id\": 3,\n            \"type\": \"Plastic\",\n            \"weight\": 5\n        },\n        \"campaign\": {\n            \"description\": \"Recolectar plástico\",\n            \"endDate\": \"2025-06-30\",\n            \"id\": 1,\n            \"startDate\": \"2025-06-01\",\n            \"title\": \"Campaña Reciclaje\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status correcto\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 404]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 06:55:41 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "245"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "7f4455b7-e02d-451c"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09eb62bfb7ac73d-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"reportDate\": \"2025-06-01\",\n    \"user\": {\n        \"id\": 3,\n        \"name\": \"Valeria\",\n        \"email\": \"vale@gmail.com\",\n        \"password\": \"Password1!\",\n        \"role\": \"ADMIN\"\n    },\n    \"recoZone\": {\n        \"id\": 3,\n        \"location\": \"San Jose\",\n        \"schedule\": \"Lunes\"\n    },\n    \"wasteType\": {\n        \"id\": 3,\n        \"type\": \"Plastic\",\n        \"weight\": 5\n    },\n    \"campaign\": {\n        \"description\": \"Recolectar plástico\",\n        \"endDate\": \"2025-06-30\",\n        \"id\": 1,\n        \"startDate\": \"2025-06-01\",\n        \"title\": \"Campaña Reciclaje\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get by Campaign",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/campaing/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports",
+                "campaing",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by Campaign",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/campaing/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports",
+                    "campaing",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 06:59:01 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "245"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "b5897a2a-1adb-49ea"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09ebb09e9ee5c75-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"reportDate\": \"2025-06-01\",\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Valeria\",\n            \"email\": \"vale@gmail.com\",\n            \"password\": \"Password1!\",\n            \"role\": \"ADMIN\"\n        },\n        \"recoZone\": {\n            \"id\": 3,\n            \"location\": \"San Jose\",\n            \"schedule\": \"Lunes\"\n        },\n        \"wasteType\": {\n            \"id\": 3,\n            \"type\": \"Plastic\",\n            \"weight\": 5\n        },\n        \"campaign\": {\n            \"description\": \"Recolectar plástico\",\n            \"endDate\": \"2025-06-30\",\n            \"id\": 1,\n            \"startDate\": \"2025-06-01\",\n            \"title\": \"Campaña Reciclaje\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get by User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/user/3",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports",
+                "user",
+                "3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by User",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/user/3",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports",
+                    "user",
+                    "3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 07:05:51 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "245"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "9f790a3b-19d8-4e4e"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09ec5101b0da677-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"reportDate\": \"2025-06-01\",\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Valeria\",\n            \"email\": \"vale@gmail.com\",\n            \"password\": \"Password1!\",\n            \"role\": \"ADMIN\"\n        },\n        \"recoZone\": {\n            \"id\": 3,\n            \"location\": \"San Jose\",\n            \"schedule\": \"Lunes\"\n        },\n        \"wasteType\": {\n            \"id\": 3,\n            \"type\": \"Plastic\",\n            \"weight\": 5\n        },\n        \"campaign\": {\n            \"description\": \"Recolectar plástico\",\n            \"endDate\": \"2025-06-30\",\n            \"id\": 1,\n            \"startDate\": \"2025-06-01\",\n            \"title\": \"Campaña Reciclaje\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get by Zone",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/zone/3",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports",
+                "zone",
+                "3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by Zone",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/zone/3",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports",
+                    "zone",
+                    "3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 07:06:25 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "245"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "c01d9267-d7b0-42b5"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09ec5e5bf21a677-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"reportDate\": \"2025-06-01\",\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Valeria\",\n            \"email\": \"vale@gmail.com\",\n            \"password\": \"Password1!\",\n            \"role\": \"ADMIN\"\n        },\n        \"recoZone\": {\n            \"id\": 3,\n            \"location\": \"San Jose\",\n            \"schedule\": \"Lunes\"\n        },\n        \"wasteType\": {\n            \"id\": 3,\n            \"type\": \"Plastic\",\n            \"weight\": 5\n        },\n        \"campaign\": {\n            \"description\": \"Recolectar plástico\",\n            \"endDate\": \"2025-06-30\",\n            \"id\": 1,\n            \"startDate\": \"2025-06-01\",\n            \"title\": \"Campaña Reciclaje\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get by Waste",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/waste/3",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports",
+                "waste",
+                "3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by Waste",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/waste/3",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports",
+                    "waste",
+                    "3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 07:06:57 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "245"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "4b461097-4e9e-4fee"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09ec6ab5f0ba677-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"reportDate\": \"2025-06-01\",\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Valeria\",\n            \"email\": \"vale@gmail.com\",\n            \"password\": \"Password1!\",\n            \"role\": \"ADMIN\"\n        },\n        \"recoZone\": {\n            \"id\": 3,\n            \"location\": \"San Jose\",\n            \"schedule\": \"Lunes\"\n        },\n        \"wasteType\": {\n            \"id\": 3,\n            \"type\": \"Plastic\",\n            \"weight\": 5\n        },\n        \"campaign\": {\n            \"description\": \"Recolectar plástico\",\n            \"endDate\": \"2025-06-30\",\n            \"id\": 1,\n            \"startDate\": \"2025-06-01\",\n            \"title\": \"Campaña Reciclaje\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Update Report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Update correcto\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 1,\r\n  \"reportDate\": \"2025-07-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Report",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 1,\r\n  \"reportDate\": \"2025-07-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports",
+                    "1"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 07:08:17 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "247"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "3870dcea-f0ef-474a"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09ec89ec9a85018-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"reportDate\": \"2025-07-01\",\n    \"user\": {\n        \"id\": 3,\n        \"name\": \"Valeria\",\n        \"email\": \"vale@gmail.com\",\n        \"password\": \"Password1!\",\n        \"role\": \"ADMIN\"\n    },\n    \"recoZone\": {\n        \"id\": 3,\n        \"location\": \"San Jose\",\n        \"schedule\": \"Lunes\"\n    },\n    \"wasteType\": {\n        \"id\": 3,\n        \"type\": \"Plastic\",\n        \"weight\": 5\n    },\n    \"campaign\": {\n        \"description\": \"Recolectar plástico\",\n        \"endDate\": \"2025-06-30\",\n        \"id\": 1,\n        \"startDate\": \"2025-06-01\",\n        \"title\": \"Campaña Reciclaje\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Delete ejecutado\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 404]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 1,\r\n  \"reportDate\": \"2025-07-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/1",
+              "protocol": "https",
+              "host": [
+                "sistema-campanas-reciclaje",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "reports",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 1,\r\n  \"reportDate\": \"2025-07-01\",\r\n  \"user\": {\r\n    \"id\": 3\r\n  },\r\n  \"recoZone\": {\r\n    \"id\": 3\r\n  },\r\n  \"wasteType\": {\r\n    \"id\": 3\r\n  },\r\n  \"campaign\": {\r\n    \"id\": 1\r\n  }\r\n}"
+                },
+                "url": {
+                  "raw": "https://sistema-campanas-reciclaje.onrender.com/reports/1",
+                  "protocol": "https",
+                  "host": [
+                    "sistema-campanas-reciclaje",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "reports",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 11 Jun 2026 07:09:27 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "31"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "6bf93477-6394-41c8"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a09eca557aeea3df-MIA"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "El reporte a sido eliminado"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

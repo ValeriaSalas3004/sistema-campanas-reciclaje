@@ -1,0 +1,16 @@
+/* Barra de progreso temporal de una campaña (días transcurridos del periodo) */
+.stream-progress {
+  position: relative;
+  height: 8px;
+  border-radius: var(--radius-sm);
+  background: var(--border-color);
+  overflow: hidden;
+}
+
+.stream-progress__fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}

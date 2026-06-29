@@ -1,0 +1,11 @@
+.campaign-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 140px;
+}
+
+.campaign-progress__label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}

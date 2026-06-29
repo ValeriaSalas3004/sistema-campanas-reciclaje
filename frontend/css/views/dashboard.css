@@ -1,0 +1,9 @@
+.dashboard-card .eyebrow {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.dashboard-card strong {
+  font-size: 1.6rem;
+  color: var(--accent-highlight);
+}
